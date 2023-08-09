@@ -20,7 +20,8 @@ jobs:
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-          run: |
-           docker buildx build --file Dockerfile --tag surendra183/my-flask-app:latest .
-            echo "$dckr_pat_xHGRVQEmrXZOqutdyiQ8wopuG8s" | docker login --username "$surendra183" --password-stdin
-           docker push surendra183/my-flask-app:latest
+        run: |
+          docker buildx build --file Dockerfile --tag surendra183/my-flask-app:latest .
+          echo "$dckr_pat_xHGRVQEmrXZOqutdyiQ8wopuG8s" | docker login --username "$surendra183" --password-stdin
+          docker push surendra183/my-flask-app:latest
+
