@@ -22,5 +22,5 @@ jobs:
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
           docker buildx build --file Dockerfile --tag surendra183/my-flask-app:latest .
-          echo $DOCKERHUB_TOKEN | docker login -u surendra183 --password-stdin
+          echo "$DOCKERHUB_TOKEN" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
           docker push surendra183/my-flask-app:latest
